@@ -13,7 +13,7 @@ We are getting the seasons data from the external api, in this case it will retu
 
   all the way to season 75 
 
-We do this to allow a user to be able to select the season they want to visualize on the front end.
+We do this to allow a user to be able to select the season they want to visualize on the front endt .
 */
 
 
