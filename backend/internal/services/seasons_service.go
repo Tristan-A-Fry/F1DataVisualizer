@@ -9,7 +9,7 @@ import (
     "net/http"
     "net/url"
     "time"
-    "f1_app/backend/config"
+    "F1DataVisualizer/backend/config"
 )
 
 func GetSeasonsData() (interface{}, error) {

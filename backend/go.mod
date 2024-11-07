@@ -1,4 +1,4 @@
-module f1_app/backend
+module F1DataVisualizer/backend
 
 go 1.23.2
 
