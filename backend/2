@@ -1,0 +1,111 @@
+package main
+
+import (
+    "encoding/json"
+    "fmt"
+    "log"
+    "net/http"
+    "gobyexample/api" // Replace with your actual module path
+)
+
+// CarDataHandler handles requests to /car_data
+func CarDataHandler(w http.ResponseWriter, r *http.Request) {
+    // Define query parameters
+    driverNumber := "55"
+    sessionKey := "9159"
+    speed := "315" // Use the number without `>=`
+
+    // Fetch data from the API
+    data, err := api.GetCarData(driverNumber, sessionKey, speed)
+    if err != nil {
+        http.Error(w, "Failed to fetch car data", http.StatusInternalServerError)
+        return
+    }
+
+    // Set Content-Type to application/json
+    w.Header().Set("Content-Type", "application/json")
+
+    // Encode data to JSON and send it as the HTTP response
+    if err := json.NewEncoder(w).Encode(data); err != nil {
+        http.Error(w, "Failed to encode data", http.StatusInternalServerError)
+        return
+    }
+}
+
+func DriverDataHandler(w http.ResponseWriter, r *http.Request) {
+    // Define query parameters
+    driverNumber := "55"
+    sessionKey := "9159"
+
+    // Fetch data from the API
+    data, err := api.GetCarData(driverNumber, sessionKey)
+    if err != nil {
+        http.Error(w, "Failed to fetch car data", http.StatusInternalServerError)
+        return
+    }
+
+    // Set Content-Type to application/json
+    w.Header().Set("Content-Type", "application/json")
+
+    // Encode data to JSON and send it as the HTTP response
+    if err := json.NewEncoder(w).Encode(data); err != nil {
+        http.Error(w, "Failed to encode data", http.StatusInternalServerError)
+        return
+    }
+}
+
+func main() {
+    // Set up the HTTP route and handler
+    http.HandleFunc("/car_data", CarDataHandler)
+    http.HandleFunc("/drivers", DriverDataHandler)
+
+    // Start the HTTP server on localhost:8080
+    fmt.Println("Server starting on http://localhost:8080")
+    log.Fatal(http.ListenAndServe(":8080", nil))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// package main
+//
+// import (
+//     "fmt"
+//     "log"
+//     "gobyexample/api" // replace with your actual module path
+// )
+//
+// func main() {
+//     driverNumber := "55"
+//     sessionKey := "9159"
+//     speed := "315"  // Format as required by the API
+//
+//     data, err := api.GetCarData(driverNumber, sessionKey, speed)
+//     if err != nil {
+//         log.Fatalf("Error fetching car data: %v", err)
+//     }
+//
+//     // Print the data
+//     fmt.Println("Car Data:", data)
+// }
+
