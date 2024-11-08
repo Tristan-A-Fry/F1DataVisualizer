@@ -22,12 +22,12 @@ func main() {
   r.Get("/constructors/{year}", handlers.ConstructorsDataHandler)
   r.Get("/drivers/{year}", handlers.DriversDataHandler)
   r.Get("/results/{year}", handlers.ResultsDataHandler)
-  // r.Get("/sprint/{year}", handlers.DriversDataHandler)
-  // r.Get("/qualifying/{year}", handlers.DriversDataHandler)
+  r.Get("/sprint/{year}", handlers.SprintDataHandler)
+  r.Get("/qualifying/{year}", handlers.QualifyingDataHandler)
   // r.Get("/pitstops/{year}/{placeholder_num}", handlers.DriversDataHandler)
   // r.Get("/laps/{year}/{placeholder_num}", handlers.DriversDataHandler)
-  // r.Get("/driverstandings/{year}", handlers.DriversDataHandler)
-  // r.Get("/constructorstandings/{year}", handlers.DriversDataHandler)
+  r.Get("/driverstandings/{year}", handlers.DriverStandingsDataHandler)
+  r.Get("/constructorstandings/{year}", handlers.ConstructorStandingsDataHandler)
 
 
 
