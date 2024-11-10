@@ -11,10 +11,14 @@ func ResultsDataHandler(w http.ResponseWriter, r *http.Request) {
     // Get the year parameter from the URL path
     year := chi.URLParam(r, "year")
 
-    // Fetch race data for the specified year
-    data, err := services.GetResultsData(year)
+    // Get the limit parameter from the query string, if provided
+    limit := r.URL.Query().Get("limit")
+    
+
+    // Fetch race data for the specified year with an optional limit
+    data, err := services.GetResultsData(year, limit)
     if err != nil {
-        http.Error(w, "Failed to fetch results data", http.StatusInternalServerError)
+        http.Error(w, "Failed to fetch data", http.StatusInternalServerError)
         return
     }
 
@@ -27,5 +31,4 @@ func ResultsDataHandler(w http.ResponseWriter, r *http.Request) {
         return
     }
 }
-
 

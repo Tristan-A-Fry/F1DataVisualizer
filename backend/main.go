@@ -7,6 +7,7 @@ import (
     "F1DataVisualizer/backend/internal/handlers" 
     "github.com/go-chi/chi/v5"
     "github.com/go-chi/chi/v5/middleware"
+    "github.com/go-chi/cors"
 )
 
 func main() {
@@ -15,6 +16,13 @@ func main() {
 
   r.Use(middleware.Logger)
   r.Use(middleware.Recoverer)
+
+  r.Use(cors.Handler(cors.Options{
+      AllowedOrigins:   []string{"http://localhost:3000"}, // Allow only your frontend origin
+      AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},
+      AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type"},
+      AllowCredentials: true,
+  }))
   
   r.Get("/seasons", handlers.SeasonsDataHandler)
   r.Get("/circuits", handlers.CircuitsDataHandler)
