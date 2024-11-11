@@ -7,3 +7,5 @@ A web application that visualizes Formula 1 race data, allowing users to view dr
 - Node.js / npm, and react for the front-end
 
 ## Setup
+1. Clone Repo -> `git clone https://github.com/your-username/F1DataVisualizer.git`
+  
