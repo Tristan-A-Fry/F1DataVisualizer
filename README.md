@@ -1,5 +1,5 @@
 # F1 Data Visualizer
-A web application that visualizes Formula 1 race data, allowing users to view driver standings and race results with graphical representations. Also will keep adding new features so keep a look out. In order to get the data I am using a third party api: https://github.com/jolpica/jolpica-f1/tree/main
+A web application that visualizes Formula 1 race data, allowing users to view driver standings and race results with graphical representations.I will keep adding new features so keep a look out. In order to get the data I am using a third party api: https://github.com/jolpica/jolpica-f1/tree/main
 
 ## Installation 
 
