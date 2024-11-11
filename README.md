@@ -14,12 +14,12 @@ A web application that visualizes Formula 1 race data, allowing users to view dr
   - Run the backend server `go run main.go`
 3. Frontend Setup:
   - `cd frontend`
-  - install node.js dependencies `npm install`
+  - Install node.js dependencies `npm install`
   - Run the frontend development server `npm start`
 4. Access the application:
   - Go to browser and go to `http://localhost:3001`
 ## Usage 
-- select a season and race to view race results.
+- Select a season and race to view race results.
 - Driver standings and timings are displayed with graphical representations and team-specific colors.
 - More features are coming
 
