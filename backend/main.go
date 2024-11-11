@@ -18,7 +18,7 @@ func main() {
   r.Use(middleware.Recoverer)
 
   r.Use(cors.Handler(cors.Options{
-      AllowedOrigins:   []string{"http://localhost:3000"}, // Allow only your frontend origin
+      AllowedOrigins:   []string{"http://localhost:3001"}, // Allow only your frontend origin
       AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},
       AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type"},
       AllowCredentials: true,
